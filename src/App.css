@@ -1,0 +1,13 @@
+body {
+    background-color: goldenrod;
+}
+.pokemon-cards {
+    display: flex;
+}
+
+.pokemon-card {
+    background-color: white;
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+}

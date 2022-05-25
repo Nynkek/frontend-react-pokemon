@@ -1,18 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
 function Pokemon({pokemon}) {
 
     const [pokemonData, setPokemonData] = useState({});
 
-    async function fetchData() {
-        try {
-            const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-            setPokemonData(result.data);
-        } catch (e) {
-            console.error(e);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+                setPokemonData(result.data);
+            } catch (e) {
+                console.error(e);
+            }
         }
-    }
+
+        fetchData();
+    }, []);
 
 
     function showAbility(array) {
@@ -22,13 +26,14 @@ function Pokemon({pokemon}) {
         return newArray;
     }
 
+
     return (
         <>
 
             {Object.keys(pokemonData).length > 0 &&
-                <div>
+                <div className="pokemon-card">
                     <h1 key={pokemonData.species.name}>{pokemonData.species.name}</h1>
-                    <img src={pokemonData.sprites.front_default}/>
+                    <img src={pokemonData.sprites.front_default} alt={pokemonData.species.name}/>
                     <p><strong>Moves:</strong> {pokemonData.moves.length} </p>
                     <p><strong>Weigth</strong>:{pokemonData.weight}</p>
                     <p><strong>Abilities:</strong>
@@ -36,7 +41,6 @@ function Pokemon({pokemon}) {
                     </p>
                 </div>
             }
-            <button type="button" onClick={fetchData}>haal data op</button>
 
 
         </>

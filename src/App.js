@@ -7,12 +7,10 @@ function App() {
 
 
     return (
-        <>
-        <Pokemon pokemon="growlithe"/>
-        <Pokemon pokemon="ditto"/>
-
-
-        </>
+        <div className="pokemon-cards">
+            <Pokemon pokemon="growlithe"/>
+            <Pokemon pokemon="ditto"/>
+        </div>
     );
 }
 
