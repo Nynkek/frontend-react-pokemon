@@ -1,0 +1,57 @@
+body {
+    background-color: goldenrod;
+    font-family: "Avenir Next";
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.page-container {
+    max-width: 1200px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemon-cards {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.pokemon-card {
+    background-color: white;
+    text-align: center;
+    padding: 0.8em;
+    margin: 0.8em;
+    width: 25ch;
+    list-style: none;
+}
+
+.pokemon-card li {
+    background-color: lightgrey;
+    padding: 1px;
+    margin: 5px;
+}
+
+button {
+    background-color: royalblue;
+    height: max-content;
+    width: max-content;
+    padding: 1em;
+    margin: 1em;
+}
+
+.next-prev-btn {
+    display: flex;
+}
