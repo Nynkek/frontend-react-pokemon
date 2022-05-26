@@ -3,16 +3,17 @@ import './App.css';
 import axios from "axios";
 import Pokemon from "./components/Pokemon";
 import Pokemons from "./components/Pokemons";
+import Buttons from "./components/Buttons";
 
 function App() {
 
 
     return (
-        <div className="pokemon-cards">
-            <Pokemon pokemon="growlithe"/>
-            <Pokemon pokemon="ditto"/>
-            <Pokemons amountPokemon="5" offsetPokemon="0" />
-        </div>
+        <article className="page-container">
+            <h1>Pokémon catalogus</h1>
+            <Pokemons amountPokemon="20" offsetPokemon="0"/>
+            <p>Met dank aan de toffe api: https://pokeapi.co</p>
+        </article>
     );
 }
 
