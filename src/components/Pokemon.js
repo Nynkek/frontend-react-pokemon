@@ -26,7 +26,6 @@ function Pokemon({pokemon}) {
         return newArray;
     }
 
-
     return (
         <>
 
